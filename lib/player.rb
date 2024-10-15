@@ -1,3 +1,5 @@
+require_relative 'deck'
+
 class Player
   attr_reader :name, :deck
 

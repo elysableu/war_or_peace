@@ -1,3 +1,7 @@
+require_relative 'player'
+require_relative 'deck'
+require_relative 'card'
+
 class Turn
   attr_reader :player1, 
               :player2, 
