@@ -37,6 +37,7 @@ class Deck
   # Remove top card from the deck
   def remove_card
     @cards.shift()
+    @cards
   end
 
   # Add one card to bottom of the deck 

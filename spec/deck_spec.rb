@@ -1,4 +1,5 @@
 require 'rspec'
+require 'pry'
 require './lib/deck'
 require './lib/card'
 
