@@ -29,7 +29,8 @@ require 'pry'
 # Create two random card sets from CardGenerator
 deck_file_path = './cards.txt'
 full_deck = CardGenerator.new(deck_file_path).generate_deck
-binding.pry
+card_set1 = full_deck[0..25]
+card_set2 = full_deck[26..52]
 
 # Welcome message
 puts 'Welcome to War! (or Peace) This game will be played with 52 cards.'
@@ -46,8 +47,6 @@ game = Game.new(input_player1, input_player2, card_set1, card_set2)
 puts "Type 'GO' to start the game!"
 input = gets.chomp
 puts "---------------------------------------------------------------"
-
- 
 
 # Start game when user inputs "GO"
 if input == "GO"

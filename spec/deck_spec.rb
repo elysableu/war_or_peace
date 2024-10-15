@@ -31,6 +31,12 @@ RSpec.describe Deck do
     expect(@deck.cards[1]).to eq(@card2)
   end
 
+  # Can access card rank through rate_of_card_at
+  it "can access card rank" do
+    expect(@deck.rank_of_card_at(0)).to eq(@card1.rank)
+    expect(@deck.rank_of_card_at(1)).to eq(@card2.rank)
+  end
+
   # Checks if a new card can be added to the bottom of the deck
   it "cards can be added to the bottom of deck" do
     expect(@deck.cards[-1]).to eq(@card3)

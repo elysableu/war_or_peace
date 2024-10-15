@@ -1,3 +1,5 @@
+require_relative 'Card'
+
 class CardGenerator 
 
   def initialize(deck_file_path)
@@ -7,12 +9,9 @@ class CardGenerator
 # Create 52 cards (read in from text file)
   def generate_deck
     full_deck = File.readlines(@deck_file_path).map do |card|
-      rank, suit, value = card.chomp.split(', ')
-      [suit, rank, value.to_i]
+      value, suit, rank = card.chomp.split(', ')
+      Card.new(suit, value.to_s, rank.to_i)
     end
-    return full_deck
+    full_deck.shuffle
   end
 end
-
-# full_deck = CardGenerator.generate_deck
-# p full_deck

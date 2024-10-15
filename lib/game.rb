@@ -39,21 +39,22 @@ class Game
           turn.pile_cards
           num_to_be_awarded = turn.spoils_of_war.length
           print "#{type_of_turn} - #{winner.name} won #{num_to_be_awarded} cards \n"
-          
+          turn.award_spoils(winner)
         else
           winner = turn.winner.dup
           type_of_turn = turn.type.to_s
           turn.pile_cards
-          num_to_be_awarded = turn.spoils_of_war.length
-          print "*#{type_of_turn}* #{num_to_be_awarded} cards removed from play"
+          num_to_be_removed = 6
+          print "*#{type_of_turn}* #{num_to_be_removed} cards removed from play \n"
+          turn.award_spoils(winner)
         end
       else 
         winner = turn.winner.dup
         turn.pile_cards
         num_to_be_awarded = turn.spoils_of_war.length
         print "#{winner.name} won #{num_to_be_awarded} cards \n"
+        turn.award_spoils(winner)
       end
       # Return winner and cards won
-      turn.award_spoils(winner)
   end
 end
